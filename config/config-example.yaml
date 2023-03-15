@@ -1,0 +1,20 @@
+debug: true
+directory: "files/"
+
+# Bank Configuration
+rtn: ""
+dan: ""
+tin: ""
+companyName: ""
+companyPhone: ""
+companyEntryDesc: ""
+bankName: ""
+balancedFile: false
+
+# Database Configuration
+mssql:
+    host: ""
+    port: 1433
+    user: ""
+    password: ""
+    database: ""

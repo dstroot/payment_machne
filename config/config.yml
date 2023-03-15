@@ -1,0 +1,27 @@
+debug: true
+directory: "files/"
+
+# Bank Configuration
+rtn: "041209129"
+dan: "2398753"
+tin: "4722260102"
+companyName: "INTUIT TURBOTAX"
+companyPhone: "(888) 808-1723"
+companyEntryDesc: "8888081723"
+bankName: "CIVISTA BANK"
+balancedFile: false
+
+# Database Configuration
+mssql:
+    host: "yms0wtdqkl.database.windows.net"
+    port: 1433
+    user: "LMP2BOyNldB"
+    password: "27UmwFYefNUe"
+    database: "OLTP_SYS"
+
+# --- TPG Production ---
+# MSSQL_HOST=tpg-vsql01
+# MSSQL_PORT=2866
+# MSSQL_USER=oltpsys
+# MSSQL_PASSWORD=TPGsql2012
+# MSSQL_DATABASE=OLTP_SYS

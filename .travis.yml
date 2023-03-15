@@ -1,0 +1,37 @@
+# https://docs.travis-ci.com/user/docker/
+language: go
+sudo: required
+go:
+  - 1.5.3
+  - 1.6beta1
+  - tip
+env:
+  global:
+    - GOARCH=amd64
+    - GO15VENDOREXPERIMENT=1
+addons:
+  apt:
+    packages:
+      - rsyslog
+      - xmlsec1
+before_script:
+  - rsyslogd &
+  - sleep 1
+script:
+  - make test
+  - ./check-fmt.sh
+  - make deadcode
+  - go get golang.org/x/net/http2/...
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+  slack:
+    secure: QJe4k18ACRUP4CDo245vBFu1hpVlcR3JPWjT7NL/vAE/Y5KDn5pNXIREPYIx9F/f8lvjF2RrQxjApeUujRh1PPt2Q53JulvaDCfM5a5SYnk5yoqu3ynlfqU4AOTDa6kzoJ3K4M9X8JhMpOtr3+IOPbwV88FjPvwviZN4p0L/0wc=
+services:
+  - docker
+  - mongo
+  - redis
+matrix:
+  allow_failures:
+    - go: tip

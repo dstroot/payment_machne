@@ -1,0 +1,5 @@
+*
+
+# Only include these files:
+!payment_machine
+!sql/sql.sql
